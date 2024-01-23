@@ -19,6 +19,6 @@ They also have really good crawfish which is always fun to go eat with **family*
 * KC Plaza
 * Power & Light District
 
-[A link to MyMedia](myMedia.md)
+[A link to MyMedia](https://github.com/cmcclintock01/from-McClintock/blob/main/MyMedia.md)
 
 
