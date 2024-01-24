@@ -30,3 +30,36 @@ You will get a title of a book, song, or video, a little description on why I re
 > Three can keep a secret, if two of them are dead.
 
 *Benjamin Franklin*
+
+---
+
+# Code
+
+This code will read chunks of input and write to the destination.
+~~~
+const http = require('http');
+const fileSystem = require('fs');
+
+http.createServer((request, response) => {
+	// This opens up the writeable stream to `output`
+	const writeStream = fileSystem.createWriteStream('./output');
+
+	// This pipes the POST data to the file
+	request.pipe(writeStream);
+
+	// After all the data is saved, respond with a simple html form so they can post more data
+	request.on('end', function() {
+		response.writeHead(200, {
+			"content-type": "text/html"
+		});
+		response.end('[-- Insert generic html FORM element here --]');
+	});
+
+	// This is here incase any errors occur
+	writeStream.on('error', function(err) {
+		console.log(err);
+	});
+}).listen(8080); 
+~~~
+Here is where I got the code <https://code.pieces.app/collections/node-js>
+
